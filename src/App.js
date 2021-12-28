@@ -146,62 +146,6 @@ function App() {
   }
 
   const mint = async () => {
-    try{
-      setIsLoading(true);
-      const connection = new Connection(network);
-
-      let bal = await connection.getBalance(appAccount.publicKey);
-      // console.log(bal);
-      if(bal < LAMPORTS_PER_SOL){
-        await getAirdrop(appAccount.publicKey, 3);
-      }
-
-      const token = await Token.createMint(connection, appAccount, appAccount.publicKey, null, 0, TOKEN_PROGRAM_ID);
-      console.log("tok:", token.publicKey.toString());
-
-      const appTknAcnt = await token.getOrCreateAssociatedAccountInfo(appAccount.publicKey);
-      console.log("assos acnt", appTknAcnt.address.toString());
-
-      await token.mintTo(appTknAcnt.address, appAccount, [], 1);
-      console.log(appTknAcnt.amount.toString());
-
-      await token.setAuthority(token.publicKey, null, "MintTokens", appAccount.publicKey, []);
-      console.log("minting disabled");
-      // await token.mintTo(appTknAcnt.address, appAccount, [], 1);
-      // console.log(appTknAcnt.amount.toString());
-
-      await createMetadata(token.publicKey);
-
-      // console.log(token);
-
-      const toTknAcnt = await token.getOrCreateAssociatedAccountInfo(walletAddress);
-      console.log("to acont", toTknAcnt.address.toString());
-
-      const tx = new Transaction().add(
-        Token.createTransferInstruction(
-          TOKEN_PROGRAM_ID,
-          appTknAcnt.address,
-          toTknAcnt.address,
-          appAccount.publicKey,
-          [],
-          1
-        )
-      );
-      // console.log("tx:", tx);
-
-      const sig = await sendAndConfirmTransaction(connection, tx, [appAccount], { commitment: "confirmed"});
-      console.log("sig:", sig);
-
-      setTokenAddress(token.publicKey.toString());
-
-      setIsLoading(false);
-    } catch(e){
-      console.log(e);
-      setIsLoading(false);
-    }
-  }
-
-  const createMetadata = async () => {
     try {
       setIsLoading(true);
 
@@ -346,19 +290,6 @@ function App() {
       {walletAddress && (
         <button disabled={isLoading} onClick={mint}>
           Mint
-        </button>
-      )}
-      {walletAddress && (
-        <button 
-          disabled={isLoading} 
-          onClick={() => { 
-            const connection = new Connection(network);
-
-            const token = new Token(connection, new PublicKey(tokenAddress), TOKEN_PROGRAM_ID, appAccount);
-            createMetadata(token);
-          }}
-        >
-          Create Metadata
         </button>
       )}
       {walletAddress && (

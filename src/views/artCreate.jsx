@@ -113,29 +113,6 @@ const ArtCreateView = ({ isLoading, setLoading, attributes, setURI }) => {
     }
   }
 
-  const test = async () => {
-    const connection = new Connection(network);
-    // const tokenPubkey = "6RfDGxghEi7M3sMaVrvAN7bTomG1m11gV9VBAEkd3g8T";
-    // console.log(newImg);
-
-    // let { data } = await axios.get("https://qorjxwntoxclfshx6hlm424oihsf35hb2dzl2c6sviefz32d4zca.arweave.net/g6Kb2bN1xLLI9_HWzmuOQeRd9OHQ8r0L0qoIXO9D5kQ/?ext=png");
-    // console.log(data);
-    // const info = await connection.getAccountInfo(new PublicKey(tokenAddress));
-    // console.log(info.owner.toString(), MetadataProgram.PUBKEY.toString());
-    // const ownedMetadata = await Metadata.load(connection, tokenAddress);
-    // console.log(ownedMetadata);
-
-    // let obj = {
-    //   connection,
-    //    wallet: new NodeWallet(appAccount), 
-    //    uri: "", 
-    //    maxSupply: 1
-    // }
-    // actions.mintNFT(obj)
-
-    // console.log(connection);
-  }
-
   return (
     <>
       <Dragger
