@@ -1,7 +1,5 @@
-.CommingSoon {
-    background-color: black;
-}
-
-.discord-button {
-    background-color: #08BDBD   ;
+.disc-button {
+    position: absolute;
+    bottom: 23px;
+    left: 45%;
 }
