@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import './Home.css';
 
 import TopBar from '../../Components/TopBar/TopBar';
+import CommingSoon from '../../Components/CommingSoon/CommingSoon';
 
 const Home = () => (
     <div className="Home">
-        <TopBar />
-        Home page
+        <CommingSoon />
     </div>
 );
 
