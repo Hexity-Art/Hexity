@@ -4,9 +4,12 @@ import './TopBar.css';
 
 import Wallet from '../Wallet/Wallet';
 
-const TopBar = () => (
+const TopBar = ({ wallet, setWallet }) => (
   <div className="TopBar">
-    <Wallet />
+    <Wallet 
+      wallet={wallet}
+      setWallet={setWallet}
+    />
     TopBar Component
   </div>
 );
