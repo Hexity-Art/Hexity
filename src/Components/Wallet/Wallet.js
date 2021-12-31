@@ -46,16 +46,35 @@ const Wallet = ({ wallet, setWallet }) => {
     // setIsLoading(false);
   };
 
+  const disconnectWallet = async () => {
+    // setIsLoading(true);
+    const { solana } = window;
 
+    if (solana) {
+      const response = await solana.disconnect();
+      console.log('Disconnected', solana);
+      setWallet(null);
+    }
+    // setIsLoading(false);
+  };
 
   return (
     <div className="Wallet">
-      {!wallet && <button onClick={connectWallet}>
-        Connect Wallet
-      </button>}
-      {wallet && <p>
-        Connected to {wallet.publicKey.toString()}
-      </p>}
+      {!wallet && (
+        <button onClick={connectWallet}>
+          Connect Wallet
+        </button>
+      )}
+      {wallet && (
+        <div>
+          <p>
+            Connected to {wallet.publicKey.toString()}
+          </p>
+          <button onClick={disconnectWallet}>
+            Disconnect
+          </button>
+        </div>
+      )}
     </div>
   );
 };
