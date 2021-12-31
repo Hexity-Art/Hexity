@@ -4,9 +4,12 @@ import './Home.css';
 
 import TopBar from '../../Components/TopBar/TopBar';
 
-const Home = () => (
+const Home = ({ wallet, setWallet }) => (
     <div className="Home">
-        <TopBar />
+        <TopBar 
+          wallet={wallet}
+          setWallet={setWallet}
+        />
         Home page
     </div>
 );
