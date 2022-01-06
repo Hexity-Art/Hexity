@@ -1,1 +1,16 @@
-.TopBar {}
+.TopBar {
+    /* From https://css.glass */
+background: rgba(0, 0, 0, 0.87);
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(6.9px);
+-webkit-backdrop-filter: blur(6.9px);
+border: 1px solid rgba(0, 0, 0, 0.45);
+font-family: GTF Opposit TRIAL;
+font-style: normal;
+font-weight: normal;
+}
+
+
+.topbar-text:hover {
+    color: #E326C7;
+}
