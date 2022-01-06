@@ -19,21 +19,21 @@ const TopBar = ({ wallet, setWallet }) => (
       </form>
       
     
-      <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+      <div class="w-full block lg:flex lg:items-center lg:w-2/4">
         <div class="text-sm lg:flex-grow">
-          <a href="#responsive-header" class="topbar-text block mt-4 text-base lg:inline-block lg:mt-0 text-white mr-4">
+          <a href="#responsive-header" class="topbar-text block mt-4 text-base lg:w-1/6 lg:inline-block lg:mt-0 text-white mr-4">
             Discover
           </a>
-          <a href="#responsive-header" class="topbar-text block mt-4 text-base lg:inline-block lg:mt-0 text-white mr-4">
+          <a href="#responsive-header" class="topbar-text block mt-4 text-base lg:w-1/6 lg:inline-block lg:mt-0 text-white mr-4">
             List
           </a>
-          <a href="#responsive-header" class="topbar-text block mt-4 text-base lg:inline-block lg:mt-0 text-white mr-4">
+          <a href="#responsive-header" class="topbar-text block mt-4 text-base lg:w-1/6 lg:inline-block lg:mt-0 text-white mr-4">
             Mint
           </a>
-          <a href="#responsive-header" class="topbar-text block mt-4 text-base lg:inline-block lg:mt-0 text-white mr-4">
+          <a href="#responsive-header" class="topbar-text block mt-4 text-base lg:w-1/6 lg:inline-block lg:mt-0 text-white mr-4">
             Learn
           </a>
-          <a href="#responsive-header" class="topbar-text block mt-4 text-base lg:inline-block lg:mt-0 text-white ">
+          <a href="#responsive-header" class=" block mt-4 text-base lg:w-1/5 lg:inline-block lg:mt-0 text-white ">
             <Wallet 
             wallet={wallet}
             setWallet={setWallet}
